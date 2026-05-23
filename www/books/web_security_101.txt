@@ -1,0 +1,55 @@
+=======================================
+  Web Security 101  -  by Sarah Johnson
+=======================================
+
+Chapter 1: Why Web Security Matters
+-------------------------------------
+Every web application is a potential target. Attackers
+look for vulnerabilities to steal data, deface sites,
+or take control of servers.
+
+Chapter 2: SQL Injection
+--------------------------
+SQL Injection happens when user input is placed directly
+into a SQL query without sanitization.
+
+  Vulnerable code:
+    query = "SELECT * FROM users WHERE name='" + input + "'"
+
+  Safe code (parameterized query):
+    cursor.execute("SELECT * FROM users WHERE name=?", (input,))
+
+  Attack example:   ' OR 1=1 --
+
+Chapter 3: Cross-Site Scripting (XSS)
+---------------------------------------
+XSS occurs when user input is reflected in HTML without
+escaping. The attacker can inject JavaScript that runs
+in the victim's browser.
+
+  Attack example:   <script>alert('XSS')</script>
+
+  Prevention: always escape HTML special characters
+  before rendering user input.
+
+Chapter 4: Path Traversal
+---------------------------
+Path traversal lets an attacker read files outside the
+intended directory by using ../ sequences.
+
+  Attack example:   /download?file=../../etc/passwd
+
+  Prevention: validate that the resolved file path stays
+  inside the allowed directory.
+
+Chapter 5: Defense in Depth
+-----------------------------
+Use multiple layers of security:
+  - Input validation
+  - Web Application Firewalls (WAFs)
+  - Parameterized queries
+  - Content Security Policy headers
+  - Regular security testing
+
+---
+End of preview. Purchase the full book at bookworm.com

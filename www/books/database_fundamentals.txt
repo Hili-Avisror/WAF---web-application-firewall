@@ -1,0 +1,48 @@
+=======================================
+  Database Fundamentals  -  by Mike Chen
+=======================================
+
+Chapter 1: What is a Database?
+-------------------------------
+A database is an organized collection of data stored
+electronically. A Relational Database stores data in
+tables with rows and columns.
+
+Chapter 2: SQL Basics
+----------------------
+SQL (Structured Query Language) is used to interact
+with databases:
+
+  SELECT * FROM students;
+  INSERT INTO students (name, grade) VALUES ('Alice', 90);
+  UPDATE students SET grade=95 WHERE name='Alice';
+  DELETE FROM students WHERE name='Bob';
+
+Chapter 3: Tables and Relationships
+-------------------------------------
+Tables have columns (fields) and rows (records).
+Tables can be related using foreign keys:
+
+  CREATE TABLE orders (
+      id INTEGER PRIMARY KEY,
+      user_id INTEGER,
+      product TEXT,
+      FOREIGN KEY (user_id) REFERENCES users(id)
+  );
+
+Chapter 4: Indexes and Performance
+------------------------------------
+Indexes speed up queries by creating a fast lookup
+structure, similar to the index in a textbook:
+
+  CREATE INDEX idx_name ON students(name);
+
+Chapter 5: Database Security
+------------------------------
+  - Use parameterized queries to prevent SQL injection
+  - Limit database user permissions
+  - Encrypt sensitive data
+  - Back up your database regularly
+
+---
+End of preview. Purchase the full book at bookworm.com
